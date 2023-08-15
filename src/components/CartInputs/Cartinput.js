@@ -29,10 +29,11 @@ const data={
     category: enteredCategory
 }
 props.getdata(data)
-console.log(data)
+// console.log(data)
 setId('');
 setName('');
 setPrice('');
+setCategory('Select Option')
 }
   return (
  <form  className='form-control' onSubmit={SubmitHandler}>
@@ -44,7 +45,8 @@ setPrice('');
     <input type="text" id='name'value={enteredName} onChange={nameHandler} />
     <label htmlFor="category">Category:</label>
 
-<select name="category" id="category" onChange={categoryHandler}>
+<select name="category" id="category" value={enteredCategory}onChange={categoryHandler}>
+  <option value="option">Select Option</option>
   <option value="Electronics">Electronics</option>
   <option value="Food">Food</option>
   <option value="Skincare">Skincare</option>
